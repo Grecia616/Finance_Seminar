@@ -1,0 +1,61 @@
+# 1) Creamos el proyecto
+Establecemos un directorio nuevo con el nombre y activamos la segunda casilla
+
+# 2) Creamos carpetas
+
+- 1. data: Almacena archivos de datos (CSV, Excel, etc.).
+- 2. scripts: Guarda scripts de R (funciones, variables, etc.).
+- 3. output: Guarda resultados generados por el código  (gráficos, tablas).
+- 4. docs: Documentación o informes relacionados.
+- 5. renv: Para guaradar paqueterías específicas (este parece que se activa de manera automática)
+
+# 2.1) Creamos archivos .R
+
+En la carpeta scripts agregamos los siguientes archivos
+
+- funciones.R
+- objetos.R
+- variables.R
+- main.R
+
+# 3) Agremos el dataset 
+
+En la carpeta objetos, creamos el data_frame <- iris
+
+Notemos que esta compuesto de 4 columnas numéricas y una de texto
+
+# 4) Crear función ciclo
+
+funcion_ciclos <- function(data_frame) {
+  
+  # Recorrer columnas
+  for (col in colnames(data_frame)) {
+    
+    # Verificar si es numérica
+    if (is.numeric(data_frame[[col]])) {
+      
+      # Calcular media
+      media <- mean(data_frame[[col]])
+      
+      # Crear un vector vacío para las etiquetas
+      etiquetas <- c()
+      
+      # Recorrer cada valor de la columna
+      for (valor in data_frame[[col]]) {
+        if (valor > media) {
+          etiquetas <- c(etiquetas, "Alto")
+        } else if (valor < media) {
+          etiquetas <- c(etiquetas, "Bajo")
+        } else {
+          etiquetas <- c(etiquetas, "Medio")
+        }
+      }
+      
+      # Agregar el vector como nueva columna
+      nuevo_nombre <- paste0("Categoria_", col)
+      data_frame[[nuevo_nombre]] <- etiquetas
+    }
+  }
+  
+  return(data_frame)
+}
