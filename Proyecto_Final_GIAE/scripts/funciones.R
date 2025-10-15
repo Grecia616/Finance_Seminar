@@ -12,19 +12,19 @@ act_suj_riesgo_cred_int <- 50000
 
 #### 95005: Títulos representativos de capital social que cumplan con el anexo 1-Q
 cod_95005 <- datos %>%
-  dplyr::filter(concepto == 95005) %>%
+  dplyr::filter(concepto == 95005, fecha == fecha_obj) %>%
   dplyr::summarise(suma = sum(importe1, na.rm = TRUE)) %>%
   dplyr::pull(suma)
 
 #### 95010: Prima en venta de acciones  de títulos representativos del capital que cumplan con el anexo 1-Q
 cod_95010 <- datos %>%
-  dplyr::filter(concepto == 95010) %>%
+  dplyr::filter(concepto == 95010, fecha == fecha_obj) %>%
   dplyr::summarise(suma = sum(importe1, na.rm = TRUE)) %>%
   dplyr::pull(suma)
 
 #### 95035: Aportaciones para futuros aumentos de capital formalizados por su órgano de gobierno
 cod_95035 <- datos %>%
-  dplyr::filter(concepto == 95035) %>%
+  dplyr::filter(concepto == 95035, fecha == fecha_obj) %>%
   dplyr::summarise(suma = sum(importe1, na.rm = TRUE)) %>%
   dplyr::pull(suma)
 
@@ -38,37 +38,37 @@ capital_contribuido <- cod_95005 + cod_95010 + cod_95035
 
 #### 95045: Reservas de capital
 cod_95045 <- datos %>%
-  dplyr::filter(concepto == 95045) %>%
+  dplyr::filter(concepto == 95045, fecha == fecha_obj) %>%
   dplyr::summarise(suma = sum(importe1, na.rm = TRUE)) %>%
   dplyr::pull(suma)
 
 #### 95050: Resultado de Ejercicios Anteriores
 cod_95050 <- datos %>%
-  dplyr::filter(concepto == 95050) %>%
+  dplyr::filter(concepto == 95050, fecha == fecha_obj) %>%
   dplyr::summarise(suma = sum(importe1, na.rm = TRUE)) %>%
   dplyr::pull(suma)
 
 #### 95055: Resultado Neto
 cod_95055 <- datos %>%
-  dplyr::filter(concepto == 95055) %>%
+  dplyr::filter(concepto == 95055, fecha == fecha_obj) %>%
   dplyr::summarise(suma = sum(importe1, na.rm = TRUE)) %>%
   dplyr::pull(suma)
 
 #### 95060: Resultado por valuación de títulos disponibles para la venta
 cod_95060 <- datos %>%
-  dplyr::filter(concepto == 95060) %>%
+  dplyr::filter(concepto == 95060, fecha == fecha_obj) %>%
   dplyr::summarise(suma = sum(importe1, na.rm = TRUE)) %>%
   dplyr::pull(suma)
 
 #### 95066: Resultado por valuación  de instrumentos de cobertura de flujos de efectivo
 cod_95066 <- datos %>%
-  dplyr::filter(concepto == 95066) %>%
+  dplyr::filter(concepto == 95066, fecha == fecha_obj) %>%
   dplyr::summarise(suma = sum(importe1, na.rm = TRUE)) %>%
   dplyr::pull(suma)
 
 #### 95068: Resultado por remediciones por beneficios definidos a los empleados.
 cod_95068 <- datos %>%
-  dplyr::filter(concepto == 95068) %>%
+  dplyr::filter(concepto == 95068, fecha == fecha_obj) %>%
   dplyr::summarise(suma = sum(importe1, na.rm = TRUE)) %>%
   dplyr::pull(suma)
 
@@ -82,19 +82,19 @@ capital_ganado <- cod_95045 + cod_95050 + cod_95055 + cod_95060 + cod_95066 + co
 
 #### 95185: Instrumentos de deuda subordinados
 cod_95185 <- datos %>%
-  dplyr::filter(concepto == 95185) %>%
+  dplyr::filter(concepto == 95185, fecha == fecha_obj) %>%
   dplyr::summarise(suma = sum(importe1, na.rm = TRUE)) %>%
   dplyr::pull(suma)
 
 #### 95195: Beneficio sobre el remanente en operaciones de bursatilización
 cod_95195 <- datos %>%
-  dplyr::filter(concepto == 95195) %>%
+  dplyr::filter(concepto == 95195, fecha == fecha_obj) %>%
   dplyr::summarise(suma = sum(importe1, na.rm = TRUE)) %>%
   dplyr::pull(suma)
 
 #### 95200: Utilidad o incremento en el valor de los activos respecto de los activos  registrados en el balance del originador de acuerdo con el 2 Bis 56
 cod_95200 <- datos %>%
-  dplyr::filter(concepto == 95200) %>%
+  dplyr::filter(concepto == 95200, fecha == fecha_obj) %>%
   dplyr::summarise(suma = sum(importe1, na.rm = TRUE)) %>%
   dplyr::pull(suma)
 
@@ -108,67 +108,67 @@ inversiones_otros_instrumentos <- cod_95185 + cod_95195 + cod_95200
 
 #### 95130: Acciones propias  adquiridas conforme a lo previsto en la LIC
 cod_95130 <- datos %>%
-  dplyr::filter(concepto == 95130) %>%
+  dplyr::filter(concepto == 95130, fecha == fecha_obj) %>%
   dplyr::summarise(suma = sum(importe1, na.rm = TRUE)) %>%
   dplyr::pull(suma)
 
 #### 95135: Subsidiarias financieras sujetas a requerimiento de capital: 
 cod_95135 <- datos %>%
-  dplyr::filter(concepto == 95135) %>%
+  dplyr::filter(concepto == 95135, fecha == fecha_obj) %>%
   dplyr::summarise(suma = sum(importe1, na.rm = TRUE)) %>%
   dplyr::pull(suma)
 
 #### 95146: Controladoras de grupos financieros
 cod_95146 <- datos %>%
-  dplyr::filter(concepto == 95146) %>%
+  dplyr::filter(concepto == 95146, fecha == fecha_obj) %>%
   dplyr::summarise(suma = sum(importe1, na.rm = TRUE)) %>%
   dplyr::pull(suma)
 
 #### 95150: Sociedades Financieras de Objeto Múltiple
 cod_95150 <- datos %>%
-  dplyr::filter(concepto == 95150) %>%
+  dplyr::filter(concepto == 95150, fecha == fecha_obj) %>%
   dplyr::summarise(suma = sum(importe1, na.rm = TRUE)) %>%
   dplyr::pull(suma)
 
 #### 95151: Administradoras de fondos para el retiro y Sociedades de inversión especializadas de fondos para el retiro
 cod_95151 <- datos %>%
-  dplyr::filter(concepto == 95151) %>%
+  dplyr::filter(concepto == 95151, fecha == fecha_obj) %>%
   dplyr::summarise(suma = sum(importe1, na.rm = TRUE)) %>%
   dplyr::pull(suma)
 
 #### 92350: Cámaras de compensación, empresas, fideicomisos  u otro tipo de figuras similares que tengan por finalidad actuar como socio liquidador.
 cod_92350 <- datos %>%
-  dplyr::filter(concepto == 92350) %>%
+  dplyr::filter(concepto == 92350, fecha == fecha_obj) %>%
   dplyr::summarise(suma = sum(importe1, na.rm = TRUE)) %>%
   dplyr::pull(suma)
 
 #### 95152: Sociedades y fondos de inversión, parte relativa al capital fijo (incluye la inversión en controladoras de sociedades de inversión)
 cod_95152 <- datos %>%
-  dplyr::filter(concepto == 95152) %>%
+  dplyr::filter(concepto == 95152, fecha == fecha_obj) %>%
   dplyr::summarise(suma = sum(importe1, na.rm = TRUE)) %>%
   dplyr::pull(suma)
 
 #### 92792: De capitales y de objeto limitado, cotizadas, respecto de las cuales la tenencia de la Institución exceda del 15 % del capital de la sociedad de inversión, por la parte de tales sociedades que esté representada por títulos accionarios
 cod_92792 <- datos %>%
-  dplyr::filter(concepto == 92792) %>%
+  dplyr::filter(concepto == 92792, fecha == fecha_obj) %>%
   dplyr::summarise(suma = sum(importe1, na.rm = TRUE)) %>%
   dplyr::pull(suma)
 
 #### 95160: Organismos Multilaterales de Desarrollo o de Fomento Internacional que cuenten con calificación crediticia asignada por alguna de las Instituciones Calificadoras al emisor, igual o mejor al grado de riesgo 2 a largo plazo
 cod_95160 <- datos %>%
-  dplyr::filter(concepto == 95160) %>%
+  dplyr::filter(concepto == 95160, fecha == fecha_obj) %>%
   dplyr::summarise(suma = sum(importe1, na.rm = TRUE)) %>%
   dplyr::pull(suma)
 
 #### 95175: Otras entidades financieras del país distintas a las comprendidas en los conceptos anteriores
 cod_95175 <- datos %>%
-  dplyr::filter(concepto == 95175) %>%
+  dplyr::filter(concepto == 95175, fecha == fecha_obj) %>%
   dplyr::summarise(suma = sum(importe1, na.rm = TRUE)) %>%
   dplyr::pull(suma)
 
 #### 95176: Otras entidades financieras del exterior distintas a las comprendidas en los conceptos anteriores
 cod_95176 <- datos %>%
-  dplyr::filter(concepto == 95176) %>%
+  dplyr::filter(concepto == 95176, fecha == fecha_obj) %>%
   dplyr::summarise(suma = sum(importe1, na.rm = TRUE)) %>%
   dplyr::pull(suma)
 
@@ -182,7 +182,7 @@ inversiones_ef_d_i <- cod_95130 + cod_95135 + cod_95146 + cod_95150 + cod_95151 
 
 #### 95215: Valores  referenciados a índices accionarios que incluyan acciones propias de la institución
 cod_95215 <- datos %>%
-  dplyr::filter(concepto == 95215) %>%
+  dplyr::filter(concepto == 95215, fecha == fecha_obj) %>%
   dplyr::summarise(suma = sum(importe1, na.rm = TRUE)) %>%
   dplyr::pull(suma)
 
@@ -196,25 +196,25 @@ inversiones_indirectas <- cod_95215
 
 #### 95251: Empresas denominadas como  "capital de riesgo" (sólo para Bancos de Desarrollo)
 cod_95251 <- datos %>%
-  dplyr::filter(concepto == 95251) %>%
+  dplyr::filter(concepto == 95251, fecha == fecha_obj) %>%
   dplyr::summarise(suma = sum(importe1, na.rm = TRUE)) %>%
   dplyr::pull(suma)
 
 #### 92375: Empresas (cotizadas y no cotizadas) accionistas de la propia Institución, de la controladora del grupo financiero o de las demás entidades financieras integrantes del grupo financiero, o de las filiales financieras de todas éstas
 cod_92375 <- datos %>%
-  dplyr::filter(concepto == 92375) %>%
+  dplyr::filter(concepto == 92375, fecha == fecha_obj) %>%
   dplyr::summarise(suma = sum(importe1, na.rm = TRUE)) %>%
   dplyr::pull(suma)
 
 #### 92389: Empresas ( cotizadas y no cotizadas) relacionadas con la institución en los términos de los artículos 73, 73 BIS y 73 BIS 1 de la L.I.C., cuya inversión no derive de capitalizaciones o daciones en pago de adeudos
 cod_92389 <- datos %>%
-  dplyr::filter(concepto == 92389) %>%
+  dplyr::filter(concepto == 92389, fecha == fecha_obj) %>%
   dplyr::summarise(suma = sum(importe1, na.rm = TRUE)) %>%
   dplyr::pull(suma)
 
 #### 92385: Cuya capitalización o dación en pago tenga más de 5 años de haberse efectuado
 cod_92385 <- datos %>%
-  dplyr::filter(concepto == 92385) %>%
+  dplyr::filter(concepto == 92385, fecha == fecha_obj) %>%
   dplyr::summarise(suma = sum(importe1, na.rm = TRUE)) %>%
   dplyr::pull(suma)
 
@@ -231,25 +231,25 @@ inversiones <- inversiones_ef_d_i + inversiones_indirectas + inversiones_ent_no_
 
 #### Reservas constituidas con cargo a cuentas distintas de resultados o de capital
 cod_resv_1 <- datos %>%
-  dplyr::filter(concepto %in% c(95667, 95286, 95700)) %>%
+  dplyr::filter(concepto %in% c(95667, 95286, 95700), fecha == fecha_obj) %>%
   dplyr::summarise(suma = sum(importe1, na.rm = TRUE)) %>%
   dplyr::pull(suma)
   
 #### Reservas pendientes de constituirse
 cod_resv_2 <- datos %>%
-  dplyr::filter(concepto %in% c(95668, 95284, 95699)) %>%
+  dplyr::filter(concepto %in% c(95668, 95284, 95699), fecha == fecha_obj) %>%
   dplyr::summarise(suma = sum(importe1, na.rm = TRUE)) %>%
   dplyr::pull(suma)
 
 ##### 95295: Pérdidas esperadas totales 
 cod_95295 <- datos %>%
-  dplyr::filter(concepto == 95295) %>%
+  dplyr::filter(concepto == 95295, fecha == fecha_obj) %>%
   dplyr::summarise(suma = sum(importe1, na.rm = TRUE)) %>%
   dplyr::pull(suma)
 
 ##### 95290: Reservas admisibles totales
 cod_95290 <- datos %>%
-  dplyr::filter(concepto == 95290) %>%
+  dplyr::filter(concepto == 95290, fecha == fecha_obj) %>%
   dplyr::summarise(suma = sum(importe1, na.rm = TRUE)) %>%
   dplyr::pull(suma)
 
@@ -267,19 +267,19 @@ reservas_fundamental <- cod_resv_1 + cod_resv_2 + cod_resv_3
   
 #### 95300: Aportaciones destinadas a la adquisición de acciones  de la sociedad controladora del grupo financiero, de otras entidades financieras integrantes del grupo o de las filiales financieras de todas
 cod_95300 <- datos %>%
-  dplyr::filter(concepto == 95300) %>%
+  dplyr::filter(concepto == 95300, fecha == fecha_obj) %>%
   dplyr::summarise(suma = sum(importe1, na.rm = TRUE)) %>%
   dplyr::pull(suma)
 
 #### 95305: Financiamiento cuyo destino directo o indirecto sea la adquisición de acciones de subsidiarias financieras de las entidades financieras integrantes del grupo.
 cod_95305 <- datos %>%
-  dplyr::filter(concepto == 95305) %>%
+  dplyr::filter(concepto == 95305, fecha == fecha_obj) %>%
   dplyr::summarise(suma = sum(importe1, na.rm = TRUE)) %>%
   dplyr::pull(suma)
 
 #### 93910: Créditos y demás operaciones que se realicen en contravención a las disposiciones aplicables
 cod_93910 <- datos %>%
-  dplyr::filter(concepto == 93910) %>%
+  dplyr::filter(concepto == 93910, fecha == fecha_obj) %>%
   dplyr::summarise(suma = sum(importe1, na.rm = TRUE)) %>%
   dplyr::pull(suma)
 
@@ -293,43 +293,43 @@ aportaciones_financiamientos <- cod_95300 + cod_95305 + cod_93910
 
 #### 95315: Intangibles distintos a crédito mercantil
 cod_95315 <- datos %>%
-  dplyr::filter(concepto == 95315) %>%
+  dplyr::filter(concepto == 95315, fecha == fecha_obj) %>%
   dplyr::summarise(suma = sum(importe1, na.rm = TRUE)) %>%
   dplyr::pull(suma)
 
 #### 95320: Crédito mercantil
 cod_95320 <- datos %>%
-  dplyr::filter(concepto == 95320) %>%
+  dplyr::filter(concepto == 95320, fecha == fecha_obj) %>%
   dplyr::summarise(suma = sum(importe1, na.rm = TRUE)) %>%
   dplyr::pull(suma)
 
 ##### 95325: De inversiones en acciones de las que se restan para determinar el Capital Básico 1 
 cod_95325 <- datos %>%
-  dplyr::filter(concepto == 95325) %>%
+  dplyr::filter(concepto == 95325, fecha == fecha_obj) %>%
   dplyr::summarise(suma = sum(importe1, na.rm = TRUE)) %>%
   dplyr::pull(suma)
 
 ##### 95330: De  otras inversiones
 cod_95330 <- datos %>%
-  dplyr::filter(concepto == 95330) %>%
+  dplyr::filter(concepto == 95330, fecha == fecha_obj) %>%
   dplyr::summarise(suma = sum(importe1, na.rm = TRUE)) %>%
   dplyr::pull(suma)
 
 #### 95345: Erogaciones o gastos cuyo reconocimiento en el capital contable se difiera en el tiempo, provenientes de  cargos diferidos  y pagos anticipados cuyo plazo remanente de afectación a resultados sea mayor a un año.
 cod_95345 <- datos %>%
-  dplyr::filter(concepto == 95345) %>%
+  dplyr::filter(concepto == 95345, fecha == fecha_obj) %>%
   dplyr::summarise(suma = sum(importe1, na.rm = TRUE)) %>%
   dplyr::pull(suma)
 
 ##### 95341: Pagos anticipados , cuyo plazo remanente de afectación a resultados sea mayor a un año.
 cod_95341 <- datos %>%
-  dplyr::filter(concepto == 95341) %>%
+  dplyr::filter(concepto == 95341, fecha == fecha_obj) %>%
   dplyr::summarise(suma = sum(importe1, na.rm = TRUE)) %>%
   dplyr::pull(suma)
 
 ##### 95342: Cargos diferidos , cuyo plazo remanente de afectación a resultados sea mayor a un año.
 cod_95342 <- datos %>%
-  dplyr::filter(concepto == 95342) %>%
+  dplyr::filter(concepto == 95342, fecha == fecha_obj) %>%
   dplyr::summarise(suma = sum(importe1, na.rm = TRUE)) %>%
   dplyr::pull(suma)
 
@@ -343,19 +343,19 @@ intangibles <- cod_95315 + cod_95320 + cod_95345
 
 #### 95360: Pérdidas fiscales
 cod_95360 <- datos %>%
-  dplyr::filter(concepto == 95360) %>%
+  dplyr::filter(concepto == 95360, fecha == fecha_obj) %>%
   dplyr::summarise(suma = sum(importe1, na.rm = TRUE)) %>%
   dplyr::pull(suma)
 
 #### 95375: Créditos Fiscales
 cod_95375 <- datos %>%
-  dplyr::filter(concepto == 95375) %>%
+  dplyr::filter(concepto == 95375, fecha == fecha_obj) %>%
   dplyr::summarise(suma = sum(importe1, na.rm = TRUE)) %>%
   dplyr::pull(suma)
 
 #### 95376: Participación de los trabajadores en las utilidades diferida activa
 cod_95376 <- datos %>%
-  dplyr::filter(concepto == 95376) %>%
+  dplyr::filter(concepto == 95376, fecha == fecha_obj) %>%
   dplyr::summarise(suma = sum(importe1, na.rm = TRUE)) %>%
   dplyr::pull(suma)
 
@@ -369,13 +369,13 @@ partidas_perdidas_creditos <- cod_95360 + cod_95375 + cod_95376
 
 ##### 95380: Diferencias temporales activas
 cod_95380 <- datos %>%
-  dplyr::filter(concepto == 95380) %>%
+  dplyr::filter(concepto == 95380, fecha == fecha_obj) %>%
   dplyr::summarise(suma = sum(importe1, na.rm = TRUE)) %>%
   dplyr::pull(suma)
 
 ##### 95390: Diferencias temporales pasivas
 cod_95390 <- datos %>%
-  dplyr::filter(concepto == 95390) %>%
+  dplyr::filter(concepto == 95390, fecha == fecha_obj) %>%
   dplyr::summarise(suma = sum(importe1, na.rm = TRUE)) %>%
   dplyr::pull(suma)
 
@@ -388,7 +388,7 @@ otras_dif_temp_act <- max(0, cod_95380 - cod_95390)
 
 #..................................................................................#
 # Total Impuestos Diferidos, partidas a favor provenientes de diferencias temporales
-impuestos_diferidos_dif_temp <- max(cod_imp_otros - limite_computabilidad)
+impuestos_diferidos_dif_temp <- max(otras_dif_temp_act - limite_computabilidad)
 
 #..................................................................................#
 # Total Impuestos Diferidos
@@ -399,13 +399,13 @@ impuestos_diferidos <- partidas_perdidas_creditos + impuestos_diferidos_dif_temp
 
 #### 95398: Resultado de valuación positivo que se deduce
 cod_95398 <- datos %>%
-  dplyr::filter(concepto == 95398) %>%
+  dplyr::filter(concepto == 95398, fecha == fecha_obj) %>%
   dplyr::summarise(suma = sum(importe1, na.rm = TRUE)) %>%
   dplyr::pull(suma)
 
 #### 95398: Resultado de valuación negativo que se suma
 cod_95398 <- datos %>%
-  dplyr::filter(concepto == 95398) %>%
+  dplyr::filter(concepto == 95398, fecha == fecha_obj) %>%
   dplyr::summarise(suma = sum(importe1, na.rm = TRUE)) %>%
   dplyr::pull(suma)
 
@@ -419,12 +419,12 @@ resultado_valuacion_instrumentos <- cod_95398 + cod_95398
 
 #### 93916: Operaciones Realizadas Con Personas Relacionadas Relevantes,  celebradas con posterioridad al 3 de marzo 2011
 cod_93916 <- datos %>%
-  dplyr::filter(concepto == 93916) %>%
+  dplyr::filter(concepto == 93916, fecha == fecha_obj) %>%
   dplyr::summarise(suma = sum(importe1, na.rm = TRUE)) %>%
   dplyr::pull(suma)
 
 #### Límite de computabilidad (25%  Capital Fundamental antes de personas relacionadas relevantes)
-lim_compu <- max(0, 0.25 *(capital_contribuido+ capital_ganado - inversiones_otros_instrumentos - inversiones - reservas_fundamental - aportaciones_financiamientos - intangibles - partidas_perdidas_creditos - impuestos_diferidos_dif_temp - cod_resul_1))
+lim_compu <- max(0, 0.25 *(capital_contribuido+ capital_ganado - inversiones_otros_instrumentos - inversiones - reservas_fundamental - aportaciones_financiamientos - intangibles - partidas_perdidas_creditos - impuestos_diferidos_dif_temp - resultado_valuacion_instrumentos))
 
 #..................................................................................#
 # Total Monto deduccion personas relevantes
@@ -436,19 +436,19 @@ monto_ded_pers_relev <- max(0, cod_93916 - lim_compu)
 
 #### 96510: Excedente de Grandes Exposiciones con limite del 25% del C.B
 cod_96510 <- datos %>%
-  dplyr::filter(concepto == 96510) %>%
+  dplyr::filter(concepto == 96510, fecha == fecha_obj) %>%
   dplyr::summarise(suma = sum(importe1, na.rm = TRUE)) %>%
   dplyr::pull(suma)
 
 #### 96520: Excedente de Grandes Exposiciones con limite del 15% del C.B
 cod_96520 <- datos %>%
-  dplyr::filter(concepto == 96520) %>%
+  dplyr::filter(concepto == 96520, fecha == fecha_obj) %>%
   dplyr::summarise(suma = sum(importe1, na.rm = TRUE)) %>%
   dplyr::pull(suma)
 
 #### 96530: Excedente de Grandes Exposiciones con limite del 100% del C.B
 cod_96530 <- datos %>%
-  dplyr::filter(concepto == 96530) %>%
+  dplyr::filter(concepto == 96530, fecha == fecha_obj) %>%
   dplyr::summarise(suma = sum(importe1, na.rm = TRUE)) %>%
   dplyr::pull(suma)
 
@@ -469,13 +469,13 @@ capital_fundamental <- capital_contribuido + capital_ganado - inversiones_otros_
 
 #### 95015: Títulos representativos del capital social que cumplan con el anexo 1-R
 cod_95015 <- datos %>%
-  dplyr::filter(concepto == 95015) %>%
+  dplyr::filter(concepto == 95015, fecha == fecha_obj) %>%
   dplyr::summarise(suma = sum(importe1, na.rm = TRUE)) %>%
   dplyr::pull(suma)
 
 #### 95020: Prima en venta de acciones de títulos representativos del capital social que cumplan con el  anexo 1-R
 cod_95020 <- datos %>%
-  dplyr::filter(concepto == 95020) %>%
+  dplyr::filter(concepto == 95020, fecha == fecha_obj) %>%
   dplyr::summarise(suma = sum(importe1, na.rm = TRUE)) %>%
   dplyr::pull(suma)
 
@@ -489,16 +489,16 @@ titulos_rep_cap_social <- cod_95015 + cod_95020
 
 #### 95075: Instrumentos de Capital que cumplan con el anexo 1-R
 cod_95075 <- datos %>%
-  dplyr::filter(concepto == 95075) %>%
+  dplyr::filter(concepto == 95075, fecha == fecha_obj) %>%
   dplyr::summarise(suma = sum(importe1, na.rm = TRUE)) %>%
   dplyr::pull(suma)
 
 ##################################### Parentesis ##################################### 
-coef_cap_fundamental <- (capital_fundamental / act_suj_riesgo_tot)*100
+coef_cap_fundamental <- capital_fundamental / act_suj_riesgo_tot
 #####################################            ##################################### 
 
 #### Límite de computabilidad conforme artículo 2 bis 6  fracción II inciso b,  a partir de diciembre 2017
-lim_compu_art2 <- ifelse(coef_cap_fundamental >= 0.1, cod_95075, 0.5 * capital_fundamental)
+lim_compu_art2 <- ifelse(coef_cap_fundamental >= 0.10, cod_95075, 0.5 * capital_fundamental)
 
 # Instrumentos de cápita computables en el básico no fundamental
 inst_cap_b_no_fun <- max(0, min(cod_95075,lim_compu_art2))
@@ -514,7 +514,7 @@ instrumentos_de_capital <- inst_cap_b_no_fun
 
 #### 95550: Monto máximo permitido de Obligaciones Subordinadas e Instrumentos de capital emitidos con anterioridad al 31 de diciembre de 2012 que computan como Capital Básico No Fundamental 
 cod_95550 <- datos %>%
-  dplyr::filter(concepto == 95550) %>%
+  dplyr::filter(concepto == 95550, fecha == fecha_obj) %>%
   dplyr::summarise(suma = sum(importe1, na.rm = TRUE)) %>%
   dplyr::pull(suma)
 
@@ -536,19 +536,19 @@ capital_no_fundamental <- titulos_rep_cap_social + instrumentos_de_capital + tit
 
 #### 95025: Títulos representativos del capital social que cumplan con el  anexo 1-S
 cod_95025 <- datos %>%
-  dplyr::filter(concepto == 95025) %>%
+  dplyr::filter(concepto == 95025, fecha == fecha_obj) %>%
   dplyr::summarise(suma = sum(importe1, na.rm = TRUE)) %>%
   dplyr::pull(suma)
 
 #### 95030: Prima en venta de acciones de títulos representativos del capital social que cumplan con el  anexo 1-S
 cod_95030 <- datos %>%
-  dplyr::filter(concepto == 95030) %>%
+  dplyr::filter(concepto == 95030, fecha == fecha_obj) %>%
   dplyr::summarise(suma = sum(importe1, na.rm = TRUE)) %>%
   dplyr::pull(suma)
 
 #..................................................................................#
 # Total titulos representativos de capital social
-titulos_rep_cap_social <- 0
+titulos_rep_cap_social_c <- 0
 ##### Duda: Se supone que los datos contienen más información o por que se referencía a una celda dado que solo llega hasta la 69
 #..................................................................................#
 
@@ -557,15 +557,15 @@ titulos_rep_cap_social <- 0
 
 ##### 95080: Instrumentos de Capital que cumplan con el anexo 1-S  con plazos de amortización
 cod_95080 <- datos %>%
-  dplyr::filter(concepto == 95080) %>%
+  dplyr::filter(concepto == 95080, fecha == fecha_obj) %>%
   dplyr::summarise(suma = sum(importe1, na.rm = TRUE)) %>%
   dplyr::pull(suma)
 
 ##### Límite de computabilidad conforme artículo 2 bis 7  fracción II a partir de diciembre 2017
-limite_comp_art2_7bis <- ifelse(coef_cap_fundamental >= 0.1, cod_95080, 0.5 * capital_fundamental) 
+limite_comp_art2_7bis <- ifelse(coef_cap_fundamental >= 0.10, cod_95080, 0.5 * capital_fundamental) 
 
 #### Instrumentos de cápita computables en el complementario
-instrumentos_capital_comp <- max(0, max(cod_95080, limite_comp_art2_7bis))
+instrumentos_capital_comp <- max(0, min(cod_95080, limite_comp_art2_7bis))
 
 #..................................................................................#
 instrumentos_capital <- 0
@@ -577,7 +577,7 @@ instrumentos_capital <- 0
 
 #### 95555: Monto máximo permitido de Obligaciones Subordinadas e Instrumentos de capital emitidos con anterioridad al 31 de diciembre de 2012 que computan como Capital Complementario
 cod_95555 <- datos %>%
-  dplyr::filter(concepto == 95555) %>%
+  dplyr::filter(concepto == 95555, fecha == fecha_obj) %>%
   dplyr::summarise(suma = sum(importe1, na.rm = TRUE)) %>%
   dplyr::pull(suma)
 
@@ -591,13 +591,13 @@ titulos_art64 = titulos_art64
 
 ##### 95691: Reservas admisibles totales.
 cod_95691 <- datos %>%
-  dplyr::filter(concepto == 95691) %>%
+  dplyr::filter(concepto == 95691, fecha == fecha_obj) %>%
   dplyr::summarise(suma = sum(importe1, na.rm = TRUE)) %>%
   dplyr::pull(suma)
 
 ##### 95695: Pérdidas Esperadas Totales
 cod_95695 <- datos %>%
-  dplyr::filter(concepto == 95695) %>%
+  dplyr::filter(concepto == 95695, fecha == fecha_obj) %>%
   dplyr::summarise(suma = sum(importe1, na.rm = TRUE)) %>%
   dplyr::pull(suma)
 
@@ -611,13 +611,13 @@ resv_comp_cart_int <- min(max(0, cod_95691 - cod_95695), lim_comp_resv_int)
 
 ##### 95704: Reservas Admisibles Totales
 cod_95704 <- datos %>%
-  dplyr::filter(concepto == 95704) %>%
+  dplyr::filter(concepto == 95704, fecha == fecha_obj) %>%
   dplyr::summarise(suma = sum(importe1, na.rm = TRUE)) %>%
   dplyr::pull(suma)
 
 ##### 95708: Pérdidas Esperadas Totales
 cod_95708 <- datos %>%
-  dplyr::filter(concepto == 95708) %>%
+  dplyr::filter(concepto == 95708, fecha == fecha_obj) %>%
   dplyr::summarise(suma = sum(importe1, na.rm = TRUE)) %>%
   dplyr::pull(suma)
 
@@ -634,7 +634,7 @@ reservas_complementario <- resv_comp_cart_int + resv_comp_cart_est
 #..................................................................................#
 
 # .-.-.-.-.-.-.-.-.-.-.-.-.-.-TOTAL CAPITAL COMPLEMENTARIO .-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
-capital_complementario <- titulos_rep_cap_social + instrumentos_capital + titulos_art64 + reservas_complementario
+capital_complementario <- titulos_rep_cap_social_c + instrumentos_capital + titulos_art64 + reservas_complementario
 
 
 
@@ -655,10 +655,10 @@ cat("El Capital Complementario es:", capital_complementario, "\n")
 
 # 5. Capital Neto
 capital_neto <- capital_basico + capital_complementario
-cat("El Capital Complementario es:", capital_neto, "\n")
+cat("El Capital Neto es:", capital_neto, "\n")
 
 
 #-------------------------------------COEFICIENTES---------------------.------------#
-coef_cap_fundamental <- (capital_fundamental_1 / act_suj_riesgo_tot)*100
+coef_cap_fundamental <- (capital_fundamental / act_suj_riesgo_tot)*100
 coef_cap_basico <-  (capital_basico / act_suj_riesgo_tot)*100
 indice <- act_suj_riesgo_tot / capital_neto
